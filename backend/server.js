@@ -9,8 +9,8 @@ import userRoute from './routes/userRoute';
 
 dotenv.config();
 
-const mongodbUrl = config.MONGODB_URL;
-mongoose.connect('mongodb+srv://myusername:mypassword123@cluster0.dpfel.mongodb.net/Canteen?retryWrites=true&w=majority', {
+const mongodbUrl = config.MONGODB_URL; 
+mongoose.connect('mongodb+srv://myusername:mypassword@cluster0.vcuxd.mongodb.net/canteenreact?retryWrites=true&w=majority', {
 	useNewUrlParser: true,
 	useUnifiedTopology: true
 })
@@ -37,6 +37,6 @@ app.get("/api/meproducts", (req, res) => {
 	res.send(medata.products);
 });
 
-app.listen(5000, () => {
+app.listen(process.env.PORT || 5000, () => {
   console.log('Server started at http://localhost:5000');
 });
